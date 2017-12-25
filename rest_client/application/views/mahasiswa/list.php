@@ -17,6 +17,7 @@
 </head>
  <body>
 <?php echo $this->session->flashdata('hasil'); ?>
+<br><br>
 <div class="container">
     <table id="mahasiswa" class="table table-bordered">
         <thead>
@@ -28,16 +29,20 @@
                 <th width="15%">Aksi</th>
             </tr>
         </thead>
+    <a href="<?php echo base_url() ?>index.php/mahasiswa/create/" class="btn btn-info" role="button" style="float: right;">Create New </a>
+    <br><br>
 
     <?php
-    // echo "<.anchor('create/post','Create').";
+    //echo "<td>".anchor('mahasiswa'/create/)"";
+
+    //echo ".anchor('mahasiswa/create','Create').";
     foreach ($mahasiswa as $m){
         echo "<tr>
               <td>$m->nim</td>
               <td>$m->nama</td>
               <td>$m->jurusan</td>
               <td>$m->alamat</td>
-              <td>".anchor('mahasiswa/edit/'d.$m->nim,'Edit')."
+              <td>".anchor('mahasiswa/edit/'.$m->nim,'Edit')."
                   ".anchor('mahasiswa/delete/'.$m->nim,'Delete')."</td>
               </tr>";
     }
