@@ -38,7 +38,7 @@
 <br><br>
 <div class="container">
    <a href="<?php echo base_url() ?>index.php/mahasiswa/create/" class="btn btn-info" id="but1" role="button" style="float: right;">Tambah Mahasiswa </a>
-   <button onclick="printFunc()" class="btn btn-default" id="but2" role="button" style="float: left;">Buat Laporan </button>
+   <button onclick="document.title='report';printFunc()" class="btn btn-default" id="but2" role="button" style="float: left;">Buat Laporan </button>
     <br><br><br><br>
     <table id="mahasiswa" class="table table-striped">
         <thead>
