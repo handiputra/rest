@@ -3,7 +3,10 @@
 
 <style type="text/css">
   @media print
-  {    
+  {   
+    table td:last-child {display:none}
+    table th:last-child {display:none}
+ 
       #but1, #but2 
       {
           display: none !important;
