@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<style type="text/css">
+  @media screen,print
+  {    
+      .no-print, .no-print *
+      {
+          display: none !important;
+      }
+  }
+
+
+
+</style>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +33,8 @@
 
 <br><br>
 <div class="container">
-   <a href="<?php echo base_url() ?>index.php/mahasiswa/create/" class="btn btn-info" role="button" style="float: right;">Tambah Mahasiswa </a>
-   <a href="<?php echo base_url() ?>index.php/mahasiswa/create/" class="btn btn-default" role="button" style="float: left;">Buat Laporan </a>
+   <a href="<?php echo base_url() ?>index.php/mahasiswa/create/" class="btn btn-info id=but1" role="button" style="float: right;">Tambah Mahasiswa </a>
+   <a href="<?php echo base_url() ?>index.php/mahasiswa/create/" class="btn btn-default id=but2" role="button" style="float: left;">Buat Laporan </a>
     <br><br><br><br>
     <table id="mahasiswa" class="table table-striped">
         <thead>
