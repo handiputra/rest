@@ -17,9 +17,13 @@
 </head>
  <body>
 <?php echo $this->session->flashdata('hasil'); ?>
+
 <br><br>
 <div class="container">
-    <table id="mahasiswa" class="table table-bordered">
+   <a href="<?php echo base_url() ?>index.php/mahasiswa/create/" class="btn btn-info" role="button" style="float: right;">Tambah Mahasiswa </a>
+   <a href="<?php echo base_url() ?>index.php/mahasiswa/create/" class="btn btn-default" role="button" style="float: left;">Buat Laporan </a>
+    <br><br><br><br>
+    <table id="mahasiswa" class="table table-striped">
         <thead>
             <tr>
                 <th width="10%">NIM</th>
@@ -29,8 +33,7 @@
                 <th width="15%">Aksi</th>
             </tr>
         </thead>
-    <a href="<?php echo base_url() ?>index.php/mahasiswa/create/" class="btn btn-info" role="button" style="float: right;">Create New </a>
-    <br><br>
+
 
     <?php
     //echo "<td>".anchor('mahasiswa'/create/)"";
