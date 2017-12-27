@@ -12,27 +12,13 @@
 
 
 </head>
-<form method="post" class="form-horizontal">
-      <div class="form-group">
-        <label class="control-label col-sm-2">
-          Nama
-        </label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" name="nama">
-        </div>
-      </div>
-  <button name="submit" class="btn btn-primary">
-          Simpan
-        </button>
 
-
-</form>
 
 
 <table class="form_input">
     <tr>
       <td>NIM</td>
-      <td><?php echo form_input('nim');?></td>
+      <td><?php echo form_input("nim");?></td>
     </tr>
     <tr>
       <td>NAMA</td>
