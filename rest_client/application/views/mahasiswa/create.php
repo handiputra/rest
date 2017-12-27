@@ -12,12 +12,34 @@
 
 
 </head>
+<form method="post" class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-2">
+          Nama
+        </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="nama">
+        </div>
+      </div>
+  <button name="submit" class="btn btn-primary">
+          Simpan
+        </button>
 
 
-<table>
-    <tr><td>NIM</td><td><?php echo form_input('nim');?></td></tr>
-    <tr><td>NAMA</td><td><?php echo form_input('nama');?></td></tr>
-    <tr><td>JURUSAN</td><td>
+</form>
+
+
+<table class="form_input">
+    <tr>
+      <td>NIM</td>
+      <td><?php echo form_input('nim');?></td>
+    </tr>
+    <tr>
+      <td>NAMA</td>
+      <td><?php echo form_input('nama');?></td>
+    </tr>
+    <tr>
+      <td>JURUSAN</td><td>
             <select name="jurusan">
             <?php
             foreach ($jurusan as $j){
@@ -25,7 +47,8 @@
             }
             ?>
             </select>
-        </td></tr>
+        </td>
+      </tr>
     <tr><td>ALAMAT</td><td><?php echo form_input('alamat');?></td></tr>
     <tr><td colspan="2">
         <?php echo form_submit('submit','Simpan');?>
