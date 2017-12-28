@@ -16,9 +16,10 @@
 
 
 <table class="form_input">
+  <?php echo form_input(['name' => 'nim', 'id' => 'nim', 'class' => 'form-control']); ?>
     <tr>
       <td>NIM</td>
-      <td><?php echo form_input("nim");?></td>
+      
     </tr>
     <tr>
       <td>NAMA</td>
