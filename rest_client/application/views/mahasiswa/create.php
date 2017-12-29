@@ -12,12 +12,13 @@
 
 
 </head>
-
+<h2><center> MASUKKAN DATA MAHASISWA</center></h2>
 <br>
-<div class="form-group col-sm-5" >
-  Nim <br> <?php echo form_input(['name' => 'nim', 'id' => 'nim', 'class' => 'form-control']); ?><br>
-  Nama <br> <?php echo form_input(['name' => 'nama', 'id' => 'nama', 'class' => 'form-control']); ?><br>
-  Jurusan<br>
+<div class="form-group" >
+  <div class="col-sm-5">
+    Nim <br> <?php echo form_input(['name' => 'nim', 'id' => 'nim', 'class' => 'form-control']); ?><br>
+    Nama <br> <?php echo form_input(['name' => 'nama', 'id' => 'nama', 'class' => 'form-control']); ?><br>
+    Jurusan<br>
       <select class="form-control" id="sel1" name="jurusan">
         <option>
           <?php
@@ -25,20 +26,18 @@
                 echo "<option value='$j->id_jurusan'>$j->jurusan</option>";
             }
           ?>
-
-
-
-        </option>
+          </option>
       </select>
   <br>Alamat <br> <?php echo form_input(['name' => 'alamat', 'id' => 'alamat', 'class' => 'form-control']); ?><br>
-
-  <br><br><?php echo form_submit(['name' => 'submit', 'id' => 'submit', 'class' => 'btn btn-lg btn-primary btn-block']); ?>
-
-</div>
-
-        <?php echo form_submit('submit','Simpan');?>
-        <?php echo anchor('mahasiswa','Kembali');?></td></tr>
-</table>
+  <div class="col-sm-3" style="float: left;">
+    <?php echo form_submit(['name' => 'submit', 'id' => 'submit', 'class' => 'btn btn-md btn-primary btn-block','value'=>'submit']); ?>
+  </div>
+  <div class="col-sm-3" >
+    <tr><td><?php echo anchor('mahasiswa','Kembali');?></td></tr>
+  </div>
+    
+  </div>
+  
 <?php
 echo form_close();
 ?>
