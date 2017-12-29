@@ -29,11 +29,12 @@
           </option>
       </select>
   <br>Alamat <br> <?php echo form_input(['name' => 'alamat', 'id' => 'alamat', 'class' => 'form-control']); ?><br>
+  
   <div class="col-sm-3" style="float: left;">
     <?php echo form_submit(['name' => 'submit', 'id' => 'submit', 'class' => 'btn btn-md btn-primary btn-block','value'=>'submit']); ?>
   </div>
   <div class="col-sm-3" >
-    <tr><td><?php echo anchor('mahasiswa','Kembali');?></td></tr>
+    <?php echo anchor('mahasiswa','Kembali',array('class' => 'btn btn-md btn-default btn-block'));?>
   </div>
     
   </div>
