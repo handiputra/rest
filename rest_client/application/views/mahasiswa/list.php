@@ -29,6 +29,7 @@
   <link href="<?php echo base_url() ?>assets/css/fontawesome-all.css" rel="stylesheet">
   <script src="<?php echo base_url() ?>assets/js/jquery-1.11.0.js"></script>
   <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/line-db-php.js"></script>
   <script src="<?php echo base_url() ?>assets/datatables/jquery.dataTables.js"></script>
   <script src="<?php echo base_url() ?>assets/datatables/dataTables.bootstrap.js"></script>
 </head>
@@ -36,6 +37,10 @@
 <?php echo $this->session->flashdata('hasil'); ?>
 
 <br><br>
+
+<div class="chart-container">
+    <canvas id="line-chartcanvas"></canvas>
+  </div>
 <div class="container">
    <a href="<?php echo base_url() ?>index.php/mahasiswa/create/" class="btn btn-info" id="but1" role="button" style="float: right;">Tambah Mahasiswa </a>
    <button onclick="document.title='report';printFunc()" class="btn btn-default" id="but2" role="button" style="float: left;">Buat Laporan </button>

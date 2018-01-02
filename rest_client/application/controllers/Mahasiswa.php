@@ -12,6 +12,7 @@ Class Mahasiswa extends CI_Controller{
     function index(){
         $data['mahasiswa'] = json_decode($this->curl->simple_get($this->API.'/mahasiswa'));
         $this->load->view('mahasiswa/list',$data);
+        //print json_encode($data);
     }
     
     // insert data mahasiswa
