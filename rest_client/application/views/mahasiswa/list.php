@@ -30,6 +30,7 @@
   <script src="<?php echo base_url() ?>assets/js/jquery-1.11.0.js"></script>
   <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
   <script src="<?php echo base_url() ?>assets/js/line-db-php.js"></script>
+  <script src="<?php echo base_url() ?>assets/js/Chart.min.js"></script>
   <script src="<?php echo base_url() ?>assets/datatables/jquery.dataTables.js"></script>
   <script src="<?php echo base_url() ?>assets/datatables/dataTables.bootstrap.js"></script>
 </head>

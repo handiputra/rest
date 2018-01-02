@@ -4,11 +4,14 @@ $(document).ready(function() {
 	 * call the data.php file to fetch the result from db table.
 	 */
 	$.ajax({
-		url : "http://localhost/rest/rest_client/applications/controllers/Mahasiswa.php",
+		url : "http://localhost/rest/rest_client/index.php/Mahasiswa/loadData",
 		type : "GET",
 		success : function(data){
-			console.log(data);
-			var Informatika=0;
+			console.log("Data="+ data);
+			var json = JSON.parse(data);
+			console.log(json);
+			//console.log("Data="+ data[i]);
+			var mesin=0;
 			var TeamBCount=0;
 			var TeamCCount=0;
 			var score = {
@@ -16,14 +19,15 @@ $(document).ready(function() {
 				TeamB : []
 			};
 
-			var len = data.length;
+			var len = json.mahasiswa.length;
+			var mahasiswa = json.mahasiswa;
 
 			for (var i = 0; i <= len; i++) {
 				//score.TeamA.push(data[i].score);
 				if (i<len) {
-					if (data[i].id_jurusan == "2") {
+					if (mahasiswa[i].jurusan == "Mesin") {
 						//score.TeamA.push(data[i].score);
-						Informatika++;
+						mesin++;
 						
 
 					}
@@ -36,7 +40,7 @@ $(document).ready(function() {
 						TeamCCount++;
 					}
 				} else if(i==len){
-					score.TeamA.push(Informatika);
+					score.TeamA.push(mesin);
 					score.TeamA.push(TeamBCount);
 					score.TeamA.push(TeamCCount);
 				}
@@ -87,7 +91,7 @@ $(document).ready(function() {
 				type : "line",
 				data : data,
 				options : options
-			} );
+			} ); 
 
 		},
 		error : function(data) {
