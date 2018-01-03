@@ -11,12 +11,11 @@ $(document).ready(function() {
 			var json = JSON.parse(data);
 			console.log(json);
 			//console.log("Data="+ data[i]);
-			var mesin=0;
+			var Teknik=0;
 			var TeamBCount=0;
 			var TeamCCount=0;
 			var score = {
-				TeamA : [],
-				TeamB : []
+				TeamA : []
 			};
 
 			var len = json.mahasiswa.length;
@@ -25,9 +24,10 @@ $(document).ready(function() {
 			for (var i = 0; i <= len; i++) {
 				//score.TeamA.push(data[i].score);
 				if (i<len) {
-					if (mahasiswa[i].jurusan == "Mesin") {
+					if (mahasiswa[i].jurusan == "Mesin" || "Informatika" || "Sipil") {
 						//score.TeamA.push(data[i].score);
-						mesin++;
+						Teknik++;
+						//console.log("teknik++ = " + mahasiswa[i].jurusan);
 						
 
 					}
@@ -40,7 +40,7 @@ $(document).ready(function() {
 						TeamCCount++;
 					}
 				} else if(i==len){
-					score.TeamA.push(mesin);
+					score.TeamA.push(Teknik);
 					score.TeamA.push(TeamBCount);
 					score.TeamA.push(TeamCCount);
 				}
@@ -50,22 +50,12 @@ $(document).ready(function() {
 			var ctx = $("#line-chartcanvas");
 
 			var data = {
-				labels : ["Teknik", "Ekonomi", "Pendidikan", "Ilkom", "Psikologi"],
+				labels : ["Teknik", "Ekonomi", "Pendidikan", "Sospol", "Psikologi"],
 				datasets : [
 					{
 						label : "TeamA score",
 						data : score.TeamA,
 						backgroundColor : "blue",
-						borderColor : "lightblue",
-						fill : false,
-						lineTension : 0,
-						pointRadius : 5
-					},
-					{
-						label : "TeamB score",
-						data : score.TeamB,
-						backgroundColor : "green",
-						borderColor : "lightgreen",
 						fill : false,
 						lineTension : 0,
 						pointRadius : 5
