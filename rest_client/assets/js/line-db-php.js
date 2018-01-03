@@ -48,12 +48,13 @@ $(document).ready(function() {
 
 			//get canvas
 			var ctx = $("#line-chartcanvas");
+			//ctx.height = 500;
 
 			var data = {
 				labels : ["Teknik", "Ekonomi", "Pendidikan", "Sospol", "Psikologi"],
 				datasets : [
 					{
-						label : "TeamA score",
+						label : "Jumlah",
 						data : score.TeamA,
 						backgroundColor : "blue",
 						fill : false,
@@ -67,7 +68,7 @@ $(document).ready(function() {
 				title : {
 					display : true,
 					position : "top",
-					text : "Jurusan",
+					text : "Mahasiswa berdasarkan Jurusan",
 					fontSize : 18,
 					fontColor : "#111"
 				},

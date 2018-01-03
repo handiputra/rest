@@ -25,7 +25,7 @@
 <!-- core CSS -->
   <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/css/dataTables.bootstrap.css" rel="stylesheet">
-  <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>assets/css/bootstrap.css" rel="stylesheet">
   <link href="<?php echo base_url() ?>assets/css/fontawesome-all.css" rel="stylesheet">
   <script src="<?php echo base_url() ?>assets/js/jquery-1.11.0.js"></script>
   <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
@@ -38,11 +38,21 @@
 <?php echo $this->session->flashdata('hasil'); ?>
 
 <br><br>
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Overview</a></li>
+    <li><a data-toggle="tab" href="#menu1">List</a></li>
+</ul>
 
-<div class="chart-container">
+    <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <br><br>
+      <div class="chart-container">
     <canvas id="line-chartcanvas"></canvas>
   </div>
-<div class="container">
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <br><br>
+      <div class="container">
    <a href="<?php echo base_url() ?>index.php/mahasiswa/create/" class="btn btn-info" id="but1" role="button" style="float: right;">Tambah Mahasiswa </a>
    <button onclick="document.title='report';printFunc()" class="btn btn-default" id="but2" role="button" style="float: left;">Buat Laporan </button>
     <br><br><br><br>
@@ -74,6 +84,10 @@
               </tr>";
     }
     ?>
+    </div>
+
+
+
 
   <script >
   function printFunc() {
