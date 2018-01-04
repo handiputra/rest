@@ -233,11 +233,11 @@ div.DTFC_LeftFootWrapper table {
 }
 
 
-.nav-tabs > li, .nav-pills > li {
-    float:none;
-    display:inline-block;
+.centered-tabs {
+  text-align: center;
 }
-
-.nav-tabs {
-    text-align:center;
+.centered-tabs .nav-tabs > li {
+  float: none !important; /* Avoid !important, added for SO snippet priority */
 }
+.centered-tabs .nav > li {
+  display:

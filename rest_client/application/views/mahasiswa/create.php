@@ -12,6 +12,13 @@
 
 
 </head>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" >Pendataan Mahasiswa</a>
+    </div>
+    
+</nav>
 <h2><center> MASUKKAN DATA MAHASISWA</center></h2>
 <br>
 <div class="form-group" >

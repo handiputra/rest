@@ -7,11 +7,11 @@
     table td:last-child {display:none}
     table th:last-child {display:none}
  
-      #but1, #but2 
+      #but1, #but2,#tab
       {
           display: none !important;
       }
-  @page { size: auto;  margin: 0mm; }
+    @page { size: auto;  margin: 0mm; }
 
   }
 
@@ -36,9 +36,16 @@
 </head>
  <body>
 <?php echo $this->session->flashdata('hasil'); ?>
-
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ">Pendataan Mahasiswa</a>
+    </div>
+    
+</nav>
 <br><br>
-<ul class="nav nav-tabs">
+<div class="col-lg-12 centered tabs">
+<ul class="nav nav-tabs" id="tab">
     <li class="active"><a data-toggle="tab" href="#home">Overview</a></li>
     <li><a data-toggle="tab" href="#menu1">List</a></li>
 </ul>
@@ -60,7 +67,7 @@
         <thead>
             <tr>
                 <th onclick="sortTable(0)" width="10%" >NIM <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-</th>
+                </th>
                 <th width="15%">NAMA</th>
                 <th width="15%">JURUSAN</th>
                 <th width="15%">ALAMAT</th>
@@ -84,6 +91,7 @@
               </tr>";
     }
     ?>
+      </div>
     </div>
 
 

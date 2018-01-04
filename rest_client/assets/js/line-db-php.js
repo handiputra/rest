@@ -12,37 +12,51 @@ $(document).ready(function() {
 			console.log(json);
 			//console.log("Data="+ data[i]);
 			var Teknik=0;
-			var TeamBCount=0;
-			var TeamCCount=0;
-			var score = {
-				TeamA : []
+			var Ekonomi=0;
+			var sospol=0;
+			var Pendidikan=0;
+			var Psikologi=0;
+			var Jumlah = {
+				arrJumlah : []
 			};
 
 			var len = json.mahasiswa.length;
 			var mahasiswa = json.mahasiswa;
 
 			for (var i = 0; i <= len; i++) {
-				//score.TeamA.push(data[i].score);
+				//Jumlah.arrJumlah.push(data[i].score);
 				if (i<len) {
-					if (mahasiswa[i].jurusan == "Mesin" || "Informatika" || "Sipil") {
-						//score.TeamA.push(data[i].score);
+					if ((mahasiswa[i].jurusan == "Informatika")|| (mahasiswa[i].jurusan == "Mesin")) {
+						//Jumlah.arrJumlah.push(data[i].score);
 						Teknik++;
-						//console.log("teknik++ = " + mahasiswa[i].jurusan);
+						console.log("teknik ke "+ i + " " +mahasiswa[i].jurusan);
 						
 
 					}
-					else if (data[i].team == "TeamB") {
+					else if (mahasiswa[i].jurusan == "Akuntansi"|| (mahasiswa[i].jurusan == "Manajemen")) {
 						//score.TeamB.push(data[i].score);
-						TeamBCount++;
+						Ekonomi++;
 					}
-					else if (data[i].team == "TeamC") {
+					else if (mahasiswa[i].jurusan == "IlmuKomunikasi"|| (mahasiswa[i].jurusan == "IlmuPemerintahan")||(mahasiswa[i].jurusan == "HubunganInternasional")) {
 						//score.TeamB.push(data[i].score);
-						TeamCCount++;
+						sospol++;
+						console.log("Sospol++ = " + mahasiswa[i].jurusan);
+					}else if (mahasiswa[i].jurusan == "Matematika"|| (mahasiswa[i].jurusan == "BahasaIndonesia")||(mahasiswa[i].jurusan == "BahasaInggris")) {
+						//score.TeamB.push(data[i].score);
+						Pendidikan++;
+						console.log("Pendidikan++ = " + mahasiswa[i].jurusan);
+					}
+					else if (mahasiswa[i].jurusan == "Psikologi") {
+						//score.TeamB.push(data[i].score);
+						Psikologi++;
+						console.log("Psikologi++ = " + mahasiswa[i].jurusan);
 					}
 				} else if(i==len){
-					score.TeamA.push(Teknik);
-					score.TeamA.push(TeamBCount);
-					score.TeamA.push(TeamCCount);
+					Jumlah.arrJumlah.push(Teknik);
+					Jumlah.arrJumlah.push(Ekonomi);
+					Jumlah.arrJumlah.push(sospol);
+					Jumlah.arrJumlah.push(Pendidikan);
+					Jumlah.arrJumlah.push(Psikologi);
 				}
 			}
 
@@ -51,11 +65,11 @@ $(document).ready(function() {
 			//ctx.height = 500;
 
 			var data = {
-				labels : ["Teknik", "Ekonomi", "Pendidikan", "Sospol", "Psikologi"],
+				labels : ["Teknik", "Ekonomi", "Sospol", "Pendidikan", "Psikologi"],
 				datasets : [
 					{
 						label : "Jumlah",
-						data : score.TeamA,
+						data : Jumlah.arrJumlah,
 						backgroundColor : "blue",
 						fill : false,
 						lineTension : 0,
@@ -68,8 +82,8 @@ $(document).ready(function() {
 				title : {
 					display : true,
 					position : "top",
-					text : "Mahasiswa berdasarkan Jurusan",
-					fontSize : 18,
+					text : " Data Mahasiswa berdasarkan Fakultas",
+					fontSize : 24,
 					fontColor : "#111"
 				},
 				legend : {
