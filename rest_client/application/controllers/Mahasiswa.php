@@ -45,7 +45,7 @@ Class Mahasiswa extends CI_Controller{
     
     // edit data mahasiswa
     function edit(){
-        if(isset($_POST['submit'])){
+        if(isset($_POST['Kirim'])){
             $data = array(
                 'nim'       =>  $this->input->post('nim'),
                 'nama'      =>  $this->input->post('nama'),
@@ -54,7 +54,7 @@ Class Mahasiswa extends CI_Controller{
             $update =  $this->curl->simple_put($this->API.'/mahasiswa', $data, array(CURLOPT_BUFFERSIZE => 10)); 
             if($update)
             {
-                $this->session->set_flashdata('hasil','Update Data Berhasil');
+                $this->session->set_flashdata('hasil');
             }else
             {
                $this->session->set_flashdata('hasil','Update Data Gagal');
